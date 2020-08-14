@@ -1,3 +1,4 @@
+import 'package:binarynumberstask/mainscreen.dart';
 import 'package:binarynumberstask/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+
     List<Widget> bottomNavList = <Widget>[
       Text(_selectedIndex.toString()),
       Text(_selectedIndex.toString())
@@ -24,22 +27,49 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       backgroundColor: black,
-      body: Center(
-        child: Text(
-          "Hey , finally i setup my project  for the task of binary zone IT numbers\n\n\n $_selectedIndex",
-          textAlign: TextAlign.center,
-        ),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("data")),
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("data")),
+          BottomNavigationBarItem(
+              icon: Padding(
+                padding: EdgeInsets.only(
+                    bottom: height * 20 / 812, top: height * 10 / 812),
+                child: Icon(Icons.home),
+              ),
+              title: SizedBox.shrink()),
+          BottomNavigationBarItem(
+              icon: Padding(
+                padding: EdgeInsets.only(
+                    bottom: height * 20 / 812, top: height * 10 / 812),
+                child: Icon(Icons.star),
+              ),
+              title: SizedBox.shrink()),
+          BottomNavigationBarItem(
+              icon: Padding(
+                padding: EdgeInsets.only(
+                    bottom: height * 20 / 812, top: height * 10 / 812),
+                child: Icon(Icons.bookmark),
+              ),
+              title: SizedBox.shrink()),
+          BottomNavigationBarItem(
+              icon: Padding(
+                padding: EdgeInsets.only(
+                    bottom: height * 20 / 812, top: height * 10 / 812),
+                child: Icon(Icons.menu),
+              ),
+              title: SizedBox.shrink()),
         ],
         currentIndex: _selectedIndex,
         onTap: (index) => _onItemTapped(index),
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.pinkAccent[400],
       ),
+      body: MainScreen(),
+      // Center(
+      //   child: Text(
+      //     "Hey , finally i setup my project  for the task of binary zone IT numbers\n\n\n $_selectedIndex",
+      //     textAlign: TextAlign.center,
+      //   ),
+      // ),
     );
   }
 }
