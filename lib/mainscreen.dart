@@ -209,25 +209,7 @@ class _MainScreenState extends State<MainScreen> {
                               color: Colors.transparent,
                               child: ListView(
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      left: width * 0 / 365,
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 8.0),
-                                          child: Text("NEW",
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 24)),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  _returnTypeHeading("NEW", width),
                                   SizedBox(
                                     height: height * 0.35,
                                     child: ListView.builder(
@@ -239,86 +221,15 @@ class _MainScreenState extends State<MainScreen> {
                                             controller
                                                 .moviesModel.moviesSubModel;
                                         MoviesSubModel movie = movieList[index];
-                                        return Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: GestureDetector(
-                                              onTap: () {
-                                                Routes.sailor.navigate(
-                                                    '/detailspage',
-                                                    params: {
-                                                      'title': movie.title,
-                                                      'year': movie.year,
-                                                      'imdbid': movie.imdbID,
-                                                      'type': movie.type,
-                                                      'imageurl': movie.poster
-                                                    });
-                                              },
-                                              child: Stack(
-                                                children: [
-                                                  Container(
-                                                    decoration: BoxDecoration(
-                                                        image: DecorationImage(
-                                                            fit: BoxFit.fill,
-                                                            image: NetworkImage(
-                                                                movie.poster)),
-                                                        color: Colors
-                                                            .blueGrey[900],
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(7)),
-                                                    width: width * 0.35,
-                                                    height: height * 0.32,
-                                                  ),
-                                                  Positioned(
-                                                      bottom: 0,
-                                                      child: Container(
-                                                        decoration: BoxDecoration(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        4),
-                                                            color: green),
-                                                        child: Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(4.0),
-                                                          child: Text(
-                                                            "NEW",
-                                                            style: TextStyle(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
-                                                          ),
-                                                        ),
-                                                      ))
-                                                ],
-                                              ),
-                                            ));
+                                        return _returnCard(
+                                            movie, width, height, "NEW");
                                       },
                                     ),
                                   ),
                                   SizedBox(
                                     height: 30,
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      left: width * 0 / 365,
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 8.0),
-                                          child: Text("POPULAR",
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 24)),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  _returnTypeHeading("POPULAR", width),
                                   SizedBox(
                                     height: height * 0.35,
                                     child: ListView.builder(
@@ -330,87 +241,15 @@ class _MainScreenState extends State<MainScreen> {
                                             controller
                                                 .moviesModel.moviesSubModel;
                                         MoviesSubModel movie = movieList[index];
-                                        return Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: GestureDetector(
-                                              onTap: () {
-                                                Routes.sailor.navigate(
-                                                    '/detailspage',
-                                                    params: {
-                                                      'title': movie.title,
-                                                      'year': movie.year,
-                                                      'imdbid': movie.imdbID,
-                                                      'type': movie.type,
-                                                      'imageurl': movie.poster
-                                                    });
-                                              },
-                                              child: Stack(
-                                                children: [
-                                                  Container(
-                                                    decoration: BoxDecoration(
-                                                        image: DecorationImage(
-                                                            fit: BoxFit.fill,
-                                                            image: NetworkImage(
-                                                                movie.poster)),
-                                                        color: Colors
-                                                            .blueGrey[900],
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(7)),
-                                                    width: width * 0.35,
-                                                    height: height * 0.32,
-                                                  ),
-                                                  Positioned(
-                                                      bottom: 0,
-                                                      child: Container(
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(4),
-                                                          color: green,
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(4.0),
-                                                          child: Text(
-                                                            "POPULAR",
-                                                            style: TextStyle(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
-                                                          ),
-                                                        ),
-                                                      ))
-                                                ],
-                                              ),
-                                            ));
+                                        return _returnCard(
+                                            movie, width, height, "POPULAR");
                                       },
                                     ),
                                   ),
                                   SizedBox(
                                     height: 30,
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      left: width * 0 / 365,
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 8.0),
-                                          child: Text("TRENDING",
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 24)),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                  _returnTypeHeading("TRENDING", width),
                                   SizedBox(
                                     height: height * 0.35,
                                     child: ListView.builder(
@@ -422,62 +261,8 @@ class _MainScreenState extends State<MainScreen> {
                                             controller
                                                 .moviesModel.moviesSubModel;
                                         MoviesSubModel movie = movieList[index];
-                                        return Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: GestureDetector(
-                                              onTap: () {
-                                                Routes.sailor.navigate(
-                                                    '/detailspage',
-                                                    params: {
-                                                      'title': movie.title,
-                                                      'year': movie.year,
-                                                      'imdbid': movie.imdbID,
-                                                      'type': movie.type,
-                                                      'imageurl': movie.poster
-                                                    });
-                                              },
-                                              child: Stack(
-                                                children: [
-                                                  Container(
-                                                    decoration: BoxDecoration(
-                                                        image: DecorationImage(
-                                                            fit: BoxFit.fill,
-                                                            image: NetworkImage(
-                                                                movie.poster)),
-                                                        color: Colors
-                                                            .blueGrey[900],
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(7)),
-                                                    width: width * 0.35,
-                                                    height: height * 0.32,
-                                                  ),
-                                                  Positioned(
-                                                      bottom: 0,
-                                                      child: Container(
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(4),
-                                                          color: green,
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .all(4.0),
-                                                          child: Text(
-                                                            "TRENDING",
-                                                            style: TextStyle(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
-                                                          ),
-                                                        ),
-                                                      ))
-                                                ],
-                                              ),
-                                            ));
+                                        return _returnCard(
+                                            movie, width, height, "TRENDING");
                                       },
                                     ),
                                   ),
@@ -488,5 +273,66 @@ class _MainScreenState extends State<MainScreen> {
             },
           )),
     );
+  }
+
+  Padding _returnTypeHeading(String heading, double width) {
+    return Padding(
+      padding: EdgeInsets.only(
+        left: width * 0 / 365,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Text("TRENDING",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Padding _returnCard(
+      MoviesSubModel movie, double width, double height, String typetext) {
+    return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GestureDetector(
+          onTap: () {
+            Routes.sailor.navigate('/detailspage', params: {
+              'title': movie.title,
+              'year': movie.year,
+              'imdbid': movie.imdbID,
+              'type': movie.type,
+              'imageurl': movie.poster
+            });
+          },
+          child: Stack(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.fill, image: NetworkImage(movie.poster)),
+                    color: Colors.blueGrey[900],
+                    borderRadius: BorderRadius.circular(7)),
+                width: width * 0.35,
+                height: height * 0.32,
+              ),
+              Positioned(
+                  bottom: 0,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4), color: green),
+                    child: Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Text(
+                        typetext,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ))
+            ],
+          ),
+        ));
   }
 }
