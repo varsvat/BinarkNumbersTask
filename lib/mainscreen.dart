@@ -169,7 +169,7 @@ class _MainScreenState extends State<MainScreen> {
                           return Fluttertoast.showToast(
                               msg: "Music Tab",
                               toastLength: Toast.LENGTH_SHORT,
-                              backgroundColor: Colors.black);y
+                              backgroundColor: Colors.black);
                         },
                         child: Container(
                           alignment: Alignment.center,
