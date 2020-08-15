@@ -13,7 +13,7 @@ MoviesModel _$MoviesModelFromJson(Map<String, dynamic> json) {
             ? null
             : MoviesSubModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    totalResults: json['totalResults'] as int,
+    totalResults: json['totalResults'] as String,
     response: json['Response'] as String,
   );
 }

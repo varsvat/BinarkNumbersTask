@@ -8,7 +8,7 @@ class MoviesModel {
   List<MoviesSubModel> moviesSubModel;
 
   @JsonKey(name: 'totalResults', includeIfNull: true)
-  final int totalResults;
+  final String totalResults;
 
   @JsonKey(name: 'Response', includeIfNull: true)
   final String response;
