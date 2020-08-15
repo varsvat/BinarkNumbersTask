@@ -82,8 +82,8 @@ class _HomePageState extends State<HomePage> {
             onTap: (index) {
               _onItemTapped(index);
             },
-            unselectedItemColor: Colors.grey,
-            selectedItemColor: Colors.pink[600],
+            unselectedItemColor: grey,
+            selectedItemColor: magentamainscreen,
           ),
         ),
         body: _selectedIndex == 0 ? MainScreen() : DummyPage()

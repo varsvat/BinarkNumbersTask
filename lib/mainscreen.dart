@@ -47,16 +47,16 @@ class _MainScreenState extends State<MainScreen> {
                         onTap: () => Fluttertoast.showToast(
                             msg: "Profile Icon Tapped",
                             toastLength: Toast.LENGTH_SHORT,
-                            backgroundColor: Colors.black),
+                            backgroundColor: black),
                         child: CircleAvatar(
-                          backgroundColor: Colors.grey[300],
+                          backgroundColor: circleavatarbackground,
                           maxRadius: height * 30 / 812,
                           child: CachedNetworkImage(
                             imageUrl: "https://i.imgur.com/t5ZMkHA.png",
                             placeholder: (context, url) =>
                                 CircularProgressIndicator(
-                              valueColor: new AlwaysStoppedAnimation<Color>(
-                                  Colors.grey[400]),
+                              valueColor:
+                                  new AlwaysStoppedAnimation<Color>(black),
                             ),
                             errorWidget: (context, url, error) =>
                                 Icon(Icons.error),
@@ -70,7 +70,7 @@ class _MainScreenState extends State<MainScreen> {
                         onTap: () => Fluttertoast.showToast(
                             msg: "Name Tapped",
                             toastLength: Toast.LENGTH_SHORT,
-                            backgroundColor: Colors.black),
+                            backgroundColor: black),
                         child: Text(
                           "Chelsie Brett",
                           style: TextStyle(fontWeight: FontWeight.bold),
@@ -83,10 +83,10 @@ class _MainScreenState extends State<MainScreen> {
                         onTap: () => Fluttertoast.showToast(
                             msg: "Search button Tapped",
                             toastLength: Toast.LENGTH_SHORT,
-                            backgroundColor: Colors.black),
+                            backgroundColor: black),
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.grey[900],
+                              color: darkgreybackground,
                               borderRadius: BorderRadius.circular(6)),
                           height: height * 40 / 812,
                           child: Row(
@@ -96,7 +96,7 @@ class _MainScreenState extends State<MainScreen> {
                               Text(
                                 "Search",
                                 style: TextStyle(
-                                    color: Colors.grey[500],
+                                    color: greyText,
                                     fontWeight: FontWeight.w600),
                               ),
                               SizedBox(
@@ -126,13 +126,13 @@ class _MainScreenState extends State<MainScreen> {
                           return Fluttertoast.showToast(
                               msg: "Movies Tab",
                               toastLength: Toast.LENGTH_SHORT,
-                              backgroundColor: Colors.black);
+                              backgroundColor: black);
                         },
                         child: Container(
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(6),
-                            color: Colors.grey[900],
+                            color: darkgreybackground,
                           ),
                           height: height / 26,
                           width: width * 0.22,
@@ -140,7 +140,7 @@ class _MainScreenState extends State<MainScreen> {
                             "Movies",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white60),
+                                color: whitegreytext),
                           ),
                         ),
                       ),
@@ -151,7 +151,7 @@ class _MainScreenState extends State<MainScreen> {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(6),
-                          color: Colors.pink[600],
+                          color: magentamainscreen,
                         ),
                         height: height / 22,
                         width: width * 0.25,
@@ -169,13 +169,13 @@ class _MainScreenState extends State<MainScreen> {
                           return Fluttertoast.showToast(
                               msg: "Music Tab",
                               toastLength: Toast.LENGTH_SHORT,
-                              backgroundColor: Colors.black);
+                              backgroundColor: black);
                         },
                         child: Container(
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(6),
-                            color: Colors.grey[900],
+                            color: darkgreybackground,
                           ),
                           height: height / 26,
                           width: width * 0.22,
@@ -183,7 +183,7 @@ class _MainScreenState extends State<MainScreen> {
                             "Music",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white60),
+                                color: whitegreytext),
                           ),
                         ),
                       ),
@@ -272,13 +272,12 @@ class _MainScreenState extends State<MainScreen> {
                                                   Positioned(
                                                       bottom: 0,
                                                       child: Container(
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(4),
-                                                          color: Colors.green,
-                                                        ),
+                                                        decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        4),
+                                                            color: green),
                                                         child: Padding(
                                                           padding:
                                                               const EdgeInsets
@@ -369,7 +368,7 @@ class _MainScreenState extends State<MainScreen> {
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(4),
-                                                          color: Colors.green,
+                                                          color: green,
                                                         ),
                                                         child: Padding(
                                                           padding:
@@ -461,7 +460,7 @@ class _MainScreenState extends State<MainScreen> {
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(4),
-                                                          color: Colors.green,
+                                                          color: green,
                                                         ),
                                                         child: Padding(
                                                           padding:
